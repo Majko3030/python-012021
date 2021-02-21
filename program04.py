@@ -45,4 +45,10 @@ morseCode = {
     "(": "-.--.",
     ")": "-.--.-"
 }
-input("jaký text chceš zapsat v morzeovce?")
+kod = input("jaký text chceš zapsat v morzeovce? Pozor, pouze malá písmena a bez diakritiky! ")
+mezera = str(' ')
+for znak in kod:
+    if mezera in kod:
+        print("/")
+    else:print(morseCode[znak[0]], end=" ")
+
