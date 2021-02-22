@@ -9,7 +9,7 @@ baliky = {
 cisloBaliku= input("Vložte číslo balíku: ")
 
 if cisloBaliku in baliky:
-    if baliky[cisloBaliku] == True:
+    if baliky[cisloBaliku]:
         print("Balík byl předán kurýrovi")
     else:
         print("Balík zatím nebyl předán kurýrovi")
