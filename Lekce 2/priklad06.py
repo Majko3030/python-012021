@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """Státy světa
 
 V kódu níže na stránce vidíš seznam slovníků s informacemi o státech světa. O každém státu tam vidíš následující informace:
@@ -502,3 +503,6 @@ staty = [
      'area': 752612.0, 'gini': 54.6},
     {'name': 'Zimbabwe', 'capital': 'Harare', 'region': 'Africa', 'subregion': 'Eastern Africa', 'population': 14240168,
      'area': 390757.0}]
+=======
+
+>>>>>>> origin/main
