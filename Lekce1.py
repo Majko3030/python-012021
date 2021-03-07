@@ -69,6 +69,8 @@ tombola = {
 cislolistku= int(input("zadej číslo svého lístku"))
 if cislolistku in tombola:
     "dodělat podmínku, aby našlo v tombole, vytisklo to a zároveń odebralo ze seznamu"
+    tombola.pop("cislolistku")
+    print(f"Výhra je {tombola['cislolistku']}")
 else:
     print("Nevýherní")
 
@@ -79,7 +81,7 @@ else:
 host= input("jméno hosta")
 if host in passwords:
     heslo=input("řekni své heslo")
-    if heslo== passwords:
-        "Smíš vstoupit"
+    if passwords["host"]==heslo:
+        print("Smíš vstoupit")
 
-else: "zákaz"
+else: print("zákaz")

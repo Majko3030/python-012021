@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 """Státy světa
 
 V kódu níže na stránce vidíš seznam slovníků s informacemi o státech světa. O každém státu tam vidíš následující informace:
@@ -11,7 +11,8 @@ V kódu níže na stránce vidíš seznam slovníků s informacemi o státech sv
     rozloha (area),
     Giniho koeficient (gini).
 
-Vytvoř program, který se uživatele zeptá na region, který ho zajímá. Následně projdi seznam a vypiš všechny státy, které leží v regionu. Pokud program žádný stát pro daný region nenajde, vypiš text "Neznámý region".
+Vytvoř program, který se uživatele zeptá na region, který ho zajímá. Následně projdi seznam a vypiš všechny státy, které leží v regionu.
+Pokud program žádný stát pro daný region nenajde, vypiš text "Neznámý region".
 """
 staty = [
     {'name': 'Afghanistan', 'capital': 'Kabul', 'region': 'Asia', 'subregion': 'Southern Asia', 'population': 27657145,
@@ -503,6 +504,12 @@ staty = [
      'area': 752612.0, 'gini': 54.6},
     {'name': 'Zimbabwe', 'capital': 'Harare', 'region': 'Africa', 'subregion': 'Eastern Africa', 'population': 14240168,
      'area': 390757.0}]
-=======
 
->>>>>>> origin/main
+
+region = input("Vlož požadovaný region ")
+
+for item in staty:
+    if item['region']== region:
+        print(item['name'],end=",")
+else: print("Neznámý region")
+
