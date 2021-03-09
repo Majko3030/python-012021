@@ -32,23 +32,21 @@ Pokud budete chtít získat první čtyři znaky, napište cislo[0:4]. Pak můž
 
 """
 
-tel_Cislo = input("Vlož telefonní číslo")
-tel_Cislo = tel_Cislo.replace(" ","")
-
-def Spravne_cislo(tel_Cislo):
+def spravne_cislo(tel_Cislo):
     if len(tel_Cislo)==9:
         return True
     elif len(tel_Cislo) ==13 and tel_Cislo[0:4] == "+420":
         return True
     else:
-        return False, print("Chybné číslo")
-
-if Spravne_cislo(tel_Cislo)==True:
-    zprava = input("Vložte svou zprávu: ")
-
-
-def Zprava(text):
+        return False
+        return print("Chybné číslo")
+def zpravaf(text):
     cena_zpravy = ((len(text)//180) + 1)*3
     return print(f"Cena vaší zprávy je {cena_zpravy} Kč.")
 
-print(Zprava(zprava))
+tel_Cislo = input("Vlož telefonní číslo")
+tel_Cislo = tel_Cislo.replace(" ","")
+
+if spravne_cislo(tel_Cislo):
+    zprava = input("Vložte svou zprávu: ")
+    print(zpravaf(zprava))
