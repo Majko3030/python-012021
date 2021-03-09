@@ -28,16 +28,16 @@ def ocekavany_vysledek(odvetvi,obrat, zeme, konference=False, newsletter=False):
     vysledek = 0
     if odvetvi =="automotive":
         vysledek +=3
-        if odvetvi == "retail":
-            vysledek +=2
+    if odvetvi == "retail":
+        vysledek +=2
     if 10000000 < obrat < 1000000000:
         vysledek+=3
-        if obrat >=100000000:
-            vysledek +=1
+    if obrat >=100000000:
+        vysledek +=1
     if zeme == "Česko" or zeme == "Slovensko":
         vysledek +=2
-        if zeme == "Německo" or zeme =="Francie":
-            vysledek+=1
+    if zeme == "Německo" or zeme =="Francie":
+        vysledek+=1
     if konference:
         vysledek +=1
     if newsletter:
@@ -49,4 +49,4 @@ def ocekavany_vysledek(odvetvi,obrat, zeme, konference=False, newsletter=False):
     else: return print("vysoká šance")
 
 ocekavany_vysledek("automotive", 2000000000,"Slovensko", True, False)
-ocekavany_vysledek("textil", 200,"Francie")
+ocekavany_vysledek("textil", 200,"Francie", newsletter=True)
