@@ -48,5 +48,5 @@ def ocekavany_vysledek(odvetvi,obrat, zeme, konference=False, newsletter=False):
             return print("střední šance")
     else: return print("vysoká šance")
 
-ocekavany_vysledek("automotive", 2000000000,"Slovensko", True, False)
+ocekavany_vysledek("automotive", 2000000000,"Slovensko", konference=True, newsletter=False)
 ocekavany_vysledek("textil", 200,"Francie", newsletter=True)
