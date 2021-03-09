@@ -24,7 +24,7 @@ Napiš funkci, které bude mít 5 parametrů, které reprezentují zadaná krit�
 Poslední dvě kritéria zadej jako nepovinná s výchozí hodnotou False.
 Funkce vrátí šanci na získání zakázky jako řetězec."""
 
-def Ocekavany_vysledek(odvetvi,obrat, zeme, konference=False, newsletter=False):
+def ocekavany_vysledek(odvetvi,obrat, zeme, konference=False, newsletter=False):
     vysledek = 0
     if odvetvi =="automotive":
         vysledek +=3
@@ -48,5 +48,5 @@ def Ocekavany_vysledek(odvetvi,obrat, zeme, konference=False, newsletter=False):
             return print("střední šance")
     else: return print("vysoká šance")
 
-Ocekavany_vysledek("automotive", 2000000000,"Slovensko", True, False)
-Ocekavany_vysledek("textil", 200,"Francie")
+ocekavany_vysledek("automotive", 2000000000,"Slovensko", True, False)
+ocekavany_vysledek("textil", 200,"Francie")

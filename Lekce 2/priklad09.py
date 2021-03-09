@@ -35,6 +35,17 @@ vysledky = [
   {"Jméno": "Červenáček", "Český jazyk": 1, "Anglický jazyk": 1, "Matematika": 1, "Fyzika": 2, "Informatika": 4},
   {"Jméno": "Rychlonožka", "Český jazyk": 4, "Anglický jazyk": 3, "Matematika": 2, "Chemie": 1, "Biologie": 4},
 ]
+
+print(vysledky[0])
 def ohodnot_studenta(student):
-  hodnota = 0
+  hodnota=0
+  for item in vysledky:
+
+print(ohodnot_studenta(vysledky))
+
+
+
+
+
+
 
