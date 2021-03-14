@@ -20,3 +20,17 @@ prvni_udalost = datetime(2021, 7, 1)
 druha_udalost = datetime(2021, 7, 3)
 if prvni_datum < druhe_datum:
   print("Druhá událost se stala po první události")"""
+from datetime import datetime, timedelta
+datum = datetime.strptime(input("Na jaké datum chcete lístky?"),"%d.%m.%Y")
+
+pocet_osob = int(input("Jaký počet osob?"))
+pocatek_datum = datetime(2021, 7,1)
+stred_datum = datetime(2021,8,10)
+konec_datum = datetime(2021, 8, 31)
+if pocatek_datum < datum < konec_datum:
+    if datum <= stred_datum:
+        print(f"Cena za lístky je {250*pocet_osob}")
+    if datum > stred_datum:
+        print(f"Cena za lístky je {180*pocet_osob}")
+else:
+    print("Středisko je zavřené")
