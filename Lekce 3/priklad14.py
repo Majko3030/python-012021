@@ -26,7 +26,7 @@ class Employee:
   def get_info(self):
     return f"{self.name} pracuje na pozici {self.position}."
   def get_net_salary(self):
-      dan = self.salary * 0,15 - self.children * 1500
+      dan = self.salary * 0.15 - self.children * 1500
       net = self.salary - dan
       return f"Čistá mzda je {net}"
   def __init__(self, name, position, salary, children):
@@ -36,5 +36,5 @@ class Employee:
     self.position = position
     self.children = children
 
-hana = ("Hana Černá", "účetní", 35000, 4)
-print(hana(get_net_salary()))
+hana = Employee("Hana Černá", "účetní", 35000, 4)
+print(hana.get_net_salary())
