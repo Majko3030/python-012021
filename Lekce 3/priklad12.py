@@ -31,12 +31,26 @@ class Auto:
 auto1 = Auto("4A2 3020", "Peugeot 403 Cabrio", "47534")
 auto2 = Auto("1P3 4747", "Škoda Octavia", "41253")
 
-print(auto1.get_info())
-print(auto1.get_info())
+autopujc = input("Jakou značku si přejete půjčit")
 
-auto_zapujceni = input("Jakou značku si přejete půjčit")
+if autopujc== "Peugeot":
+    print(auto1.get_info())
+    auto1.pujc_auto()
+elif autopujc== "Škoda":
+    print(auto2.get_info())
+    auto2.pujc_auto()
+else:
+    print("Chybná značka")
 
-if auto_zapujcení = ( "Peugeot" or "Škoda"):
 
+autopujc = input("Jakou značku si přejete půjčit")
+
+
+if autopujc== "Peugeot":
+    print(auto1.get_info())
+    auto1.pujc_auto()
+elif autopujc== "Škoda":
+    print(auto2.get_info())
+    auto2.pujc_auto()
 else:
     print("Chybná značka")
