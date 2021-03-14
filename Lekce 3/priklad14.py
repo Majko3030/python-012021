@@ -22,3 +22,19 @@ Volání funkce proveď pomocí klíčového slova, tj. např.:
 net_salary = self.salary - get_tax()
 
 Bod samozřejmě získáš za obě verze :-)"""
+class Employee:
+  def get_info(self):
+    return f"{self.name} pracuje na pozici {self.position}."
+  def get_net_salary(self):
+      dan = self.salary * 0,15 - self.children * 1500
+      net = self.salary - dan
+      return f"Čistá mzda je {net}"
+  def __init__(self, name, position, salary, children):
+    self.name = name
+    self.position = position
+    self.salary = salary
+    self.position = position
+    self.children = children
+
+hana = ("Hana Černá", "účetní", 35000, 4)
+print(hana(get_net_salary()))

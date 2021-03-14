@@ -37,15 +37,16 @@ vysledky = [
 ]
 
 print(vysledky[0])
+for zapis in vysledky:
+  for values in vysledky[0].values():
+     if type(values) ==int:
+        print(values)
+
+
 def ohodnot_studenta(student):
   hodnota=0
-  for item in vysledky:
+  for student in vysledky:
 
-print(ohodnot_studenta(vysledky))
-
-
-
-
-
-
+    if 5 in student:
+      return print("Neuspěl")
 
