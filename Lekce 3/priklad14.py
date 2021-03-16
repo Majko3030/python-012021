@@ -33,7 +33,6 @@ class Employee:
     self.name = name
     self.position = position
     self.salary = salary
-    self.position = position
     self.children = children
 
 hana = Employee("Hana Černá", "účetní", 35000, 4)

@@ -17,20 +17,28 @@ class Auto:
         self.znacka = znacka
         self.km = km
         self.obsazenost = obsazenost
-        self.stav_tachometru
-        self.dny
+        self.stav_tachometru= stav_tachometru
+        self.dny= dny
     def get_info(self):
-        return f"Auto s poznávačkou {self.registr_znacka}, značka {self.znacka} a ujetými {self.km} km, obsazenost je {self.obsazenost}"
+        return f"Auto s poznávačkou {self.registr_znacka}, značka {self.znacka} a ujetými {self.km} km, obsazenost je {self.obsazenost}, "
     def pujc_auto(self):
         if self.obsazenost:
             self.obsazenost = False
-            return print("Potvrzuji zapůjčení vozidla")
+            print("Potvrzuji zapůjčení vozidla")
         else:
             print("Vozidlo není k dispozici.")
+    def cena(self, dny):
+        if dny<7:
+            cena = 400 * dny
+        else:
+            cena = 300 * dny
+        return f"Cena za půjčení vozu je {cena} Kč."
     def vrat_auto(self, stav_tachometru, dny):
+        self.stav_tachometru=stav_tachometru
+        self.obsazenost
 
-auto1 = Auto("4A2 3020", "Peugeot 403 Cabrio", "47534")
-auto2 = Auto("1P3 4747", "Škoda Octavia", "41253")
+auto1 = Auto("4A2 3020", "Peugeot 403 Cabrio", "47534",200, 0 )
+auto2 = Auto("1P3 4747", "Škoda Octavia", "41253", 200, 0)
 
 autopujc = input("Jakou značku si přejete půjčit")
 
@@ -55,3 +63,21 @@ elif autopujc== "Škoda":
     auto2.pujc_auto()
 else:
     print("Chybná značka")
+
+vracene_auto = input("Jaké auto vracíte?")
+zakaznik1_dny = int(input("Počet dnů půjčení auta: "))
+zakaznik1_km = int(input("Počet ujetých km"))
+
+if vracene_auto== "Peugeot":
+    auto1.vrat_auto(stav_tachometru=+zakaznik1_km, dny=zakaznik1_dny)
+    print(auto1.cena(dny=zakaznik1_dny))
+elif vracene_auto == "Škoda":
+    auto2.vrat_auto(stav_tachometru=+zakaznik1_km, dny=zakaznik1_dny)
+    print(auto2.cena(dny=zakaznik1_dny))
+else:
+    print("Chybný typ vozidla")
+
+
+
+
+

@@ -24,7 +24,7 @@ class Auto:
     def pujc_auto(self):
         if self.obsazenost:
             self.obsazenost = False
-            return print("Potvrzuji zapůjčení vozidla")
+            print("Potvrzuji zapůjčení vozidla")
         else:
             print("Vozidlo není k dispozici.")
 
