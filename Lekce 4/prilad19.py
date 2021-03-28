@@ -4,7 +4,7 @@ Zopakuj si postup při instalaci modulu. Pojďme si vytvořit směnárnu, která
 stáhnout z internetu.
 
 V PyCharmu klikni na File -> Settings -> Project -> Python Interpreter. Následně klikni na tlačítko + (Install) a
-vyhledej modul forex-python. Dále klini na Install Package a potvrď instalaci.
+vyhledej modul forex-python. Dále klini na Install Package a potvrď instalaci. - NAINSTALOVÁNO
 
 Dále se podívej na následující příklad, jak s modulem pracovat. Na prvním řádku je import, aby Python věděl, že s
 modulem chceme pracovat. Na druhém řádku vytvoříme objekt prevodnik (je to objekt třídy CurrencyRates), který se stará o převod měn.
@@ -27,3 +27,12 @@ Pokročilejší varianta
 Podívej se do dokumentace k modulu forex-python. Zjistíš, že umí pár dalších zajímavých věcí, například převod měny do Bitcoinu.
 Zkus pomocí modulu vytvořit program, který se zeptá uživatele na měnu a požadovaný počet Bitcoinů a vrátí mu množství měny,
 které by potřeboval, aby požadované množství Bitcoinů mohl koupit."""
+
+from forex_python.converter import CurrencyRates
+pozadovana_mena = input("Zadejte kod měny, na níž chcete směnit?")
+prevodnik = CurrencyRates()
+pozadovano_v_cilove_mene = int(input("Kolik cílovéměny měny si přejete?"))
+cena_v_korunach = prevodnik.convert(pozadovana_mena, 'CZK', pozadovano_v_cilove_mene)
+print(cena_v_korunach)
+
+#https://forex-python.readthedocs.io/en/latest/usage.html
