@@ -14,6 +14,8 @@ Vytvoř objekt, který reprezentuje nějakého uživatele. Následně zkus uvaž
  které jsi vytvořil(a) jako objekty. Uživateli připočti délky děl k délce sledování,
  využij k tomu funkci get_celkova_delka() u objektu a seriálu, abys zjistil(a), kolik minut (nebo hodin) videa celkem uživatel zhlédl.
 
+TOTO DÁLE JEŠTĚ NEUDĚLALA!
+
 Nejjednodušší řešení je, pokud si u filmu/seriálu uložíš celkovou délku do pomocné proměnné a tuto pomocnou proměnnou
 potom předáš jako parametr funkci pripocti_zhlednuti().
 Složitější varianta
@@ -26,3 +28,37 @@ Dále vytvoř funkci delka_sledování() pro uživatele, která projde položky 
 které uživatel zhlédl.
 
 Vytvoř si ukázkové objekty a ověř, že vše funguje."""
+class Polozka:
+    def __init__(self, nazev, zanr):
+        self.nazev = nazev
+        self.zanr = zanr
+    def get_info(self):
+        return f"Název je {self.nazev}, žánr je {self.zanr}"
+
+class Film(Polozka):
+    def __init__(self, nazev, zanr, delka):
+        super().__init__(nazev, zanr)
+        self.delka = delka
+    def get_info(self):
+        return f"{super().get_info()}, delka filmu je {self.delka} minut."
+    def get_celkova_delka(self, delka):
+        return self.delka
+
+class Serial(Polozka):
+    def __init__(self, nazev, zanr, pocet_epizod, delka_ep):
+        super().__init__(nazev, zanr)
+        self.pocet_epizod = pocet_epizod
+        self.delka_ep = delka_ep
+    def get_info(self):
+        return f"{super().get_info()}, pocet epizod je {self.pocet_epizod} o délce {self.delka_ep} minut."
+    def get_celkova_delka(self, pocet_epizod, delka_ep):
+        return self.pocet_epizod*self.delka_ep
+class Uzivatel():
+    def __init__(self, uzivatelske_jmeno, delka_sledovani=0):
+        self.uzivatelske_jmeno = uzivatelske_jmeno
+        self.delka_sledovani = delka_sledovani
+    def pripocti_zhlednuti(self, sledovani):
+        self.delka_sledovani += sledovani
+film=Film("Secretly greatly","triller", 100)
+serial= Serial("Vincenzo", "drama",20, 50)
+anna = Uzivatel("A87")
