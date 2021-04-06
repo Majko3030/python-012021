@@ -22,7 +22,7 @@ Složitější varianta
 
 V pokročilejší variantě neeviduj pouze délku sledování ale i to, jaké pořady uživatel sledoval.
 Namísto délky sledování vytvoř atribut, který bude udávat zhlédnuté pořady (ideální pro tento účel je seznam).
-Dále přidej funkci zhledni_polozku(), která do seznamu zhlédnutých pořadů přidánovou položku.
+Dále přidej funkci zhledni_polozku(), která do seznamu zhlédnutých pořadů přidá novou položku.
 
 Dále vytvoř funkci delka_sledování() pro uživatele, která projde položky v seznamu a vrátí celkovou délku všech pořadů,
 které uživatel zhlédl.
@@ -41,7 +41,7 @@ class Film(Polozka):
         self.delka = delka
     def get_info(self):
         return f"{super().get_info()}, delka filmu je {self.delka} minut."
-    def get_celkova_delka(self, delka):
+    def get_celkova_delka(self):
         return self.delka
 
 class Serial(Polozka):
@@ -51,7 +51,7 @@ class Serial(Polozka):
         self.delka_ep = delka_ep
     def get_info(self):
         return f"{super().get_info()}, pocet epizod je {self.pocet_epizod} o délce {self.delka_ep} minut."
-    def get_celkova_delka(self, pocet_epizod, delka_ep):
+    def get_celkova_delka(self):
         return self.pocet_epizod*self.delka_ep
 class Uzivatel():
     def __init__(self, uzivatelske_jmeno, delka_sledovani=0):
@@ -59,6 +59,19 @@ class Uzivatel():
         self.delka_sledovani = delka_sledovani
     def pripocti_zhlednuti(self, sledovani):
         self.delka_sledovani += sledovani
+    def get_info(self):
+        print(f"Uživatel {self.uzivatelske_jmeno} shlédl obsah v délce {self.delka_sledovani} minut.")
+    def zhledni_polozku(self,zhlednuta_polozka=[]):
+        zhlednuta_polozka += self.zhlednuta_polozka
+
+
 film=Film("Secretly greatly","triller", 100)
 serial= Serial("Vincenzo", "drama",20, 50)
+#print(serial.get_celkova_delka())
 anna = Uzivatel("A87")
+#varianta lehčí
+#anna.pripocti_zhlednuti(film.get_celkova_delka())
+#anna.get_info()
+
+
+
