@@ -1,0 +1,10 @@
+
+<h2> Seznam osob:</h2>
+
+<ul>
+    {% for jmeno in object_list %}
+    <li>{{crm.jmeno}} {{crm.prijmeni}}, email: {{crm.email}}</li>
+    {% endfor %}
+</ul>
+
+

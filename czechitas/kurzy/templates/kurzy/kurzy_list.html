@@ -1,9 +1,17 @@
+{%block content%}
 <h2>Seznam kurzů</h2>
 <p>Zde vidíte aktuální nabídku kurzů</p>
 <ul>
-    <li>Kurz 1</li>
-    <li>Kurz 2</li>
+    {% for kurz in object_list %}
+    <li>{{kurz.nazev}}, cena je {{ kurz.cena }} Kč</li>
+    {% endfor %}
 </ul>
+
 <!-- ul - unordered list = seznam, takto dělají komentáře v html -->
 
 <!--také lze ctrl + /-->
+<!-- % for kurz in object_list % - toto umožní udělat něco, co django samoosobě nemá/-->
+<!-- HTML nebere mezery (neřeší odsazení)/-->
+<!-- kurz.nazev - nazev aplikace - atribut modelu/-->
+{% endblock %}
+
