@@ -1,0 +1,10 @@
+
+
+<h2>{{ object.jmeno }}</h2>
+<li> <a href=" {% url 'organizace_detail' organizace.pk %}">{{ zaznam.jmeno}}</a></li>
+<h3> ICO:</h3>
+{{ object.ico }}
+<h3> Adresa:</h3>
+{{ object.ulice }}
+{{ object.psc }}
+{{ object.mesto }}

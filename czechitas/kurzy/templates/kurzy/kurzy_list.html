@@ -3,7 +3,7 @@
 <p>Zde vidíte aktuální nabídku kurzů</p>
 <ul>
     {% for kurz in object_list %}
-    <li>{{kurz.nazev}}, cena je {{ kurz.cena }} Kč</li>
+    <li><a href="{% url 'detail_kurzu' kurz.pk %}"> {{kurz.nazev }} </a></li>
     {% endfor %}
 </ul>
 
