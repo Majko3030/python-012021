@@ -53,5 +53,5 @@ class Balik:
     self.address = address
 
 balik1 = Balik(generator_falesnych_dat.name(), generator_falesnych_dat.address())
-print(balik1.get_info())
+balik1.get_info()
 #https://faker.readthedocs.io/en/master/
