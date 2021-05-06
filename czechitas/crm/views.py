@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse
 from django.views import View
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from . import models
 
 
@@ -23,3 +23,8 @@ class OrganizaceView(ListView):
 class Detail_organizace (DetailView):
     model= models.Organizace
     template_name = "organizace_detail.html"
+
+class FormularKontakt (CreateView):
+    model = models.Kontakt
+    template_name = "formular_kontakt.html"
+    fields = ["jmeno", "ico", "ulice", "psc", "mesto"]

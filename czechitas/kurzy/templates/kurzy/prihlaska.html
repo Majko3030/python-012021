@@ -1,5 +1,16 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+
 <form method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save">
+    {%bootstrap_form_form %}
+    {% buttons %}
+
+    <input type="submit" class=" "btn btn-primary" value="Uložit">
+    {% endbuttons %}
 </form>
 # metoda post - umožnuje mít balík informací (co člověk vyplní)
+#type submit - tlačítko, value - co se zobrazí
+
+{% endblock %}

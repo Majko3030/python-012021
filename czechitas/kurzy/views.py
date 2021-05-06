@@ -29,6 +29,8 @@ class VytvorPrihlasku(CreateView):
     template_name = "kurzy/prihlaska.html"
     fields = ["email", "jmeno","prijmeni", "motivace", "kurz"]
     success_url = reverse_lazy('potvrzeni_prihlasky')
+# fiels - musí obsahovat hodnoty z modelu, pokud povnná položka v modelu, musí být k vyplnění
+#pokud pole nechci, tak v modelu nastavit jako nepovinný atribut
 
 class PotvrzeniPrihlasky(TemplateView):
     template_name = "potvrzeni.html"
