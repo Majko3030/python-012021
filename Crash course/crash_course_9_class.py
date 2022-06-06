@@ -12,6 +12,18 @@ class Restaurant:
     def increment_number_served(self,guest):
         self.number_served +=guest
 
+class IceCreamStand(Restaurant):
+    def __init__(self,restaurant_name, cuisine_type):
+        super().__init__(restaurant_name,cuisine_type)
+        self.flavor=["jahodova","malinova","vanilka"]
+    def display_flavors(self,flavor):
+        print("Máme tyto zmrzliny:")
+        for zmrzlina in flavor:
+            print(zmrzlina)
+icecream=IceCreamStand("Zmrzka","zmrzlina")
+print(icecream.display_flavors(["jahoda","malina"]))
+
+
 restauraceJana = Restaurant("Jana","italská")
 restauraceJana.increment_number_served(6)
 print(restauraceJana.number_served)
@@ -40,6 +52,17 @@ class User:
     def reset_login_attempts(self):
         self.login_attempts=0
 
+class Admin(User):
+    def __init__(self,first_name, last_name,hobby, sign,privileges=12):
+        super().__init__(first_name,last_name, hobby, sign)
+        self.privileges=privileges
+    def show_privileges(self, privileges):
+        print("List of priviledges:")
+        for privilege in privileges:
+            print(privilege)
+
+Ana_admin=Admin("Anna","Malá","čtení","škorpion")
+"""zjistit, proč nefunuje privileges primární hodnota zadaná v třídě!"""
 Hana = User("Hana","Malá", "pletení","štír")
 Kana = User("Kana","Velká","čtení", "střelec")
 #Hana.greet_user()
