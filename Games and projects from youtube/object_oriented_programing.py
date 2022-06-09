@@ -1,4 +1,4 @@
-#https://www.youtube.com/watch?v=JeznW_7DlB0
+#https://www.youtube.com/watch?v=JeznW_7DlB0    21:15
 dog="dog"
 print(dog.upper())
 print(dog.lower())
