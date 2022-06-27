@@ -19,3 +19,4 @@ print(digital_root(132189))
 
 n=942
 print(list(map(int,str(n))))
+
